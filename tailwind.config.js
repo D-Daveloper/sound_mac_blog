@@ -8,6 +8,7 @@ export default {
         mobile_nav: "rgba(34, 134, 153, 0.47)",
         text: "#0B0B0B",
         homebg: "#f4f4f4",
+        icon: "#10414A",
       },
     },
   },
