@@ -26,7 +26,6 @@ const HeaderComponent = () => {
         <div className="hover:text-primary">
           <a href="/" className="flex items-center gap-4">
             <img src={logo} alt="logo" />
-            <h1>Soundmac</h1>
           </a>
         </div>
         <nav role="navigation">

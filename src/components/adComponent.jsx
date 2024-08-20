@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 const AdComponent = () => {
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {
-      console.error('Ads failed to load:', e);
+      console.error("Ads failed to load:", e);
     }
   }, []);
 
   return (
-    <div className='border- border-white bg-[#f0f0f0]'>
+    <div className="border- mx-auto w-[80%] border-white bg-[#f0f0f0]">
       <ins
         className="adsbygoogle"
-        style={{ display: 'block' }}
+        style={{ display: "block" }}
         data-ad-client="ca-pub-1301399568087141"
         data-ad-slot="2614456678"
         data-ad-format="auto"

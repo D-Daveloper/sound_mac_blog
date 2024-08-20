@@ -7,7 +7,7 @@ export default {
         primary: "#E74C3C",
         mobile_nav: "rgba(34, 134, 153, 0.47)",
         text: "#0B0B0B",
-        homebg:"#f4f4f4"
+        homebg: "#f4f4f4",
       },
     },
   },
