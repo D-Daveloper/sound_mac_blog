@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/icons/logo.svg";
 import hamburger from "../assets/icons/hamburger.svg";
 import closeicon from "../assets/icons/closeicon.svg";
+import { Link, NavLink } from "react-router-dom";
 
 const HeaderComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   function menuControl() {
     setIsOpen(!isOpen);
   }
+
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("stop-scrolling");
@@ -24,26 +26,26 @@ const HeaderComponent = () => {
     <header className="grad relative shadow-2xl">
       <div className="mx-auto flex max-w-[80%] items-center justify-between bg-transparent p-5 text-white max-lg:max-w-[90%] max-md:max-w-full">
         <div className="hover:text-primary">
-          <a href="/" className="flex items-center gap-4">
+          <NavLink to ="/"  className="flex items-center gap-4">
             <img src={logo} alt="logo" />
-          </a>
+          </NavLink>
         </div>
         <nav role="navigation">
           <ul className="flex gap-10 space-x-4 max-lg:hidden" role="list">
             <li role="listitem" aria-label="Home">
-              <a href="/" className="hover:text-primary">
-                Home
-              </a>
+            <NavLink to="/" className={({ isActive }) => isActive ? 'text-[#E74C3C]' : 'text-white hover:text-primary'}>
+              Home
+            </NavLink>
             </li>
             <li role="listitem" aria-label="About">
-              <a href="/about" className="hover:text-primary">
-                About
-              </a>
+            <NavLink to="/about" className={({ isActive }) => isActive ? 'text-[#E74C3C]' : 'text-white hover:text-primary'}>
+              About
+            </NavLink>
             </li>
             <li role="listitem" aria-label="Soundmac">
-              <a href="https://www.soundmac.co/" className="hover:text-primary">
+              <Link to="https://www.soundmac.co/" className="hover:text-primary">
                 Soundmac
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -63,14 +65,14 @@ const HeaderComponent = () => {
             role="list"
           >
             <li role="listitem">
-              <a href="/" className="hover:text-primary">
+              <NavLink to="/"className={({ isActive }) => isActive ? 'text-[#E74C3C]' : 'text-black hover:text-primary'}>
                 Home
-              </a>
+              </NavLink>
             </li>
             <li role="listitem">
-              <a href="/about" className="hover:text-primary">
+              <NavLink to="/about"className={({ isActive }) => isActive ? 'text-[#E74C3C]' : 'text-black hover:text-primary'}>
                 About
-              </a>
+              </NavLink>
             </li>
             <li role="listitem">
               <a href="https://www.soundmac.co/" className="hover:text-primary">

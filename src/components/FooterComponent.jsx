@@ -11,9 +11,9 @@ const FooterComponent = () => {
         <p>policy</p>
       </div>
       <div className="flex gap-3">
-        <a href=""><i class="fa-brands fa-instagram"></i></a>     
-        <a href=""><i class="fa-brands fa-x-twitter"></i></a>     
-        <a href=""><i class="fa-brands fa-instagram"></i></a>     
+        <a href=""><i className="fa-brands fa-instagram"></i></a>     
+        <a href=""><i className="fa-brands fa-x-twitter"></i></a>     
+        <a href=""><i className="fa-brands fa-instagram"></i></a>     
       </div>
     </div>
   </footer>);

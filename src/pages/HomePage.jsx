@@ -2,21 +2,32 @@ import React, { useState } from "react";
 import Hero from "../components/Hero";
 import { home_post } from "../data/index";
 import { ArrowLeft, ArrowRight, Heart, Share2 } from "lucide-react";
+import 'animate.css';
+
 const HomePage = () => {
 
-  function handleIconClick(e){
-    e.target.style.fill = "#10414A"
-  }
+  const [likedPosts, setLikedPosts] = useState({});
+
+  const handleIconClick = (e) => {
+    let event = e.target;
+    if (event.style.fill === "#10414A"){
+      return event.style.fill === "none"
+    }else if(event.style.fill === "non e"){
+      event.style.fill = "#10414A";
+    }
+    console.log(event.style.fill);
+    
+  };
 
   return (
     <main className="bg-homebg">
       <div>
         <Hero />
       </div>
-      <section className="mx-auto max-w-[90%]">
-        <div className=" flex  gap-6">
+      <section className="">
+        <div className="">
           <div className="max-w-[70%] mx-auto">
-            <h1 className="my-11 text-4xl font-bold capitalize text-text">
+            <h1 className="animate__animated animate__bounce my-11 text-4xl font-bold capitalize text-text">
               recent posts
             </h1>
             <section className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -32,7 +43,7 @@ const HomePage = () => {
                     <p className="text-sm">{item.time}</p>
                     <div className="flex justify-between text-base font-semibold items-baseline align-baseline">
                       <p className="text-icon flex gap-3">
-                        <button onClick={handleIconClick}>
+                        <button onClick={handleIconClick} className="fill-none">
                         <Heart stroke="#10414A" className={"hover:scale-110 focus:scale-110" }/> 
                         </button>
                         {item.likes}
@@ -69,7 +80,7 @@ const HomePage = () => {
             <ArrowRight />
           </button>
         </div>
-        <div className="max-w-[70%]">
+        <div className="max-w-[70%] mx-auto">
           <h3 className="capitalize font-semibold text-[1.5vw] max-md:text-lg">
             dont miss a beat!
           </h3>
