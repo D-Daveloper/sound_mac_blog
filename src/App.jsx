@@ -10,8 +10,7 @@ function App() {
       <HeaderComponent />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/BlogPost" element={<BlogPost />} />
-        <Route path="/post/:id" element={<About />} />
+        <Route path="/post/:id" element={<BlogPost />} />
       </Routes>
       <FooterComponent />
     </div>

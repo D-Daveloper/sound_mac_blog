@@ -15,7 +15,6 @@ const HeaderComponent = () => {
     setIsOpen(false);
   }, [location]);
 
-
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("stop-scrolling");
@@ -32,24 +31,27 @@ const HeaderComponent = () => {
     <header className="grad relative shadow-2xl">
       <div className="mx-auto flex max-w-[80%] items-center justify-between bg-transparent p-5 text-white max-lg:max-w-[90%] max-md:max-w-full">
         <div className="hover:text-primary">
-          <NavLink to ="/"  className="flex items-center gap-4">
+          <NavLink to="/" className="flex items-center gap-4">
             <img src={logo} alt="logo" />
           </NavLink>
         </div>
         <nav role="navigation">
           <ul className="flex gap-10 space-x-4 max-lg:hidden" role="list">
             <li role="listitem" aria-label="Home">
-            <NavLink to="/" className={({ isActive }) => isActive ? 'text-[#E74C3C]' : 'text-white hover:text-primary'}>
-              Home
-            </NavLink>
-            </li>
-            <li role="listitem" aria-label="About">
-            <NavLink to="/BlogPost" className={({ isActive }) => isActive ? 'text-[#E74C3C]' : 'text-white hover:text-primary'}>
-              Blog Post
-            </NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "text-[#E74C3C]" : "text-white hover:text-primary"
+                }
+              >
+                Home
+              </NavLink>
             </li>
             <li role="listitem" aria-label="Soundmac">
-              <Link to="https://www.soundmac.co/" className="hover:text-primary">
+              <Link
+                to="https://www.soundmac.co/"
+                className="hover:text-primary"
+              >
                 Soundmac
               </Link>
             </li>
@@ -71,13 +73,13 @@ const HeaderComponent = () => {
             role="list"
           >
             <li role="listitem">
-              <NavLink to="/"className={({ isActive }) => isActive ? 'text-[#E74C3C]' : 'text-black hover:text-primary'}>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "text-[#E74C3C]" : "text-black hover:text-primary"
+                }
+              >
                 Home
-              </NavLink>
-            </li>
-            <li role="listitem">
-              <NavLink to="/BlogPost"className={({ isActive }) => isActive ? 'text-[#E74C3C]' : 'text-black hover:text-primary'}>
-                Blog Post
               </NavLink>
             </li>
             <li role="listitem">
