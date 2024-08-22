@@ -95,7 +95,10 @@ const HomePage = () => {
                     : " bg-white text-black")
                 }
                 key={num + 1}
-                onClick={() => setCurrentPage(num + 1)}
+                onClick={() => {
+                  window.scrollTo(0, 0)
+                  setCurrentPage(num + 1)
+                }}
                 disabled={currentPage === num + 1}
               >
                 {num + 1}

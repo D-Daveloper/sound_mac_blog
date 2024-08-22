@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { home_post } from "../data/index";
 import logo from "../assets/icons/logo.svg";
 import { Heart, Share2 } from "lucide-react";
@@ -76,44 +76,46 @@ const BlogPost = () => {
           </h1>
           <div className="flex flex-wrap justify-between gap-3">
             {home_post.slice(0, 3).map((item, index) => (
-              <article
-                key={index}
-                className="flex justify-center rounded-2xl bg-white p-3 hover:shadow-lg"
-              >
-                <div className="flex w-[400px] flex-col justify-between hover:cursor-pointer max-lg:w-full">
-                  <div>
-                    <img
-                      src={item.imgURL}
-                      alt=""
-                      className="w-full object-cover"
-                    />
+              <Link to={`/post/${item.id}`}>
+                <article
+                  key={index}
+                  className="flex justify-center rounded-2xl bg-white p-3 hover:shadow-lg"
+                >
+                  <div className="flex w-[400px] flex-col justify-between hover:cursor-pointer max-lg:w-full">
+                    <div>
+                      <img
+                        src={item.imgURL}
+                        alt=""
+                        className="w-full object-cover"
+                      />
+                    </div>
+                    <h2 className="font-semibold leading-normal text-text">
+                      {item.Title}
+                    </h2>
+                    <p className="text-sm">{item.time}</p>
+                    <div className="flex justify-between text-base font-semibold">
+                      <p className="flex gap-3 text-icon">
+                        <button className="fill-none">
+                          <Heart
+                            stroke="#10414A"
+                            className={"hover:scale-110 focus:scale-110"}
+                          />
+                        </button>
+                        {item.likes}
+                      </p>
+                      <p className="flex gap-3 text-icon">
+                        <button>
+                          <Share2
+                            stroke="#10414A"
+                            className={"hover:scale-110 focus:scale-110"}
+                          />
+                        </button>
+                        {item.shares}
+                      </p>
+                    </div>
                   </div>
-                  <h2 className="font-semibold leading-normal text-text">
-                    {item.Title}
-                  </h2>
-                  <p className="text-sm">{item.time}</p>
-                  <div className="flex justify-between text-base font-semibold">
-                    <p className="flex gap-3 text-icon">
-                      <button className="fill-none">
-                        <Heart
-                          stroke="#10414A"
-                          className={"hover:scale-110 focus:scale-110"}
-                        />
-                      </button>
-                      {item.likes}
-                    </p>
-                    <p className="flex gap-3 text-icon">
-                      <button>
-                        <Share2
-                          stroke="#10414A"
-                          className={"hover:scale-110 focus:scale-110"}
-                        />
-                      </button>
-                      {item.shares}
-                    </p>
-                  </div>
-                </div>
-              </article>
+                </article>
+              </Link>
             ))}
           </div>
         </div>
