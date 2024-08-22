@@ -2,13 +2,19 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/icons/logo.svg";
 import hamburger from "../assets/icons/hamburger.svg";
 import closeicon from "../assets/icons/closeicon.svg";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const HeaderComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   function menuControl() {
     setIsOpen(!isOpen);
   }
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
 
   useEffect(() => {
     if (isOpen) {
@@ -38,8 +44,8 @@ const HeaderComponent = () => {
             </NavLink>
             </li>
             <li role="listitem" aria-label="About">
-            <NavLink to="/about" className={({ isActive }) => isActive ? 'text-[#E74C3C]' : 'text-white hover:text-primary'}>
-              About
+            <NavLink to="/BlogPost" className={({ isActive }) => isActive ? 'text-[#E74C3C]' : 'text-white hover:text-primary'}>
+              Blog Post
             </NavLink>
             </li>
             <li role="listitem" aria-label="Soundmac">
@@ -70,8 +76,8 @@ const HeaderComponent = () => {
               </NavLink>
             </li>
             <li role="listitem">
-              <NavLink to="/about"className={({ isActive }) => isActive ? 'text-[#E74C3C]' : 'text-black hover:text-primary'}>
-                About
+              <NavLink to="/BlogPost"className={({ isActive }) => isActive ? 'text-[#E74C3C]' : 'text-black hover:text-primary'}>
+                Blog Post
               </NavLink>
             </li>
             <li role="listitem">
